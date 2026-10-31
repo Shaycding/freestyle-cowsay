@@ -130,7 +130,8 @@ const setCowsaySentence = (text) => {
         <pre style="font-family: monospace; margin: 0; white-space: pre; overflow-x: auto;">${cowsay.say({
       text,
       e: "oO"
-    })}</pre>
+    })}
+<span style="color: green;">wWwWwWwWwWwWwWwWwWwWwWwWwWwWwWwWwWwWwWwWwWw</span></pre>
       </div>
     </body>
   </html>
