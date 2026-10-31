@@ -124,9 +124,9 @@ const setCowsaySentence = (text) => {
       <title>Cow Say</title>
     </head>
 
-    <body style="margin: 0; padding: 2rem; background-color: #f0f4f8; font-family: sans-serif; min-height: 100vh; box-sizing: border-box;">
-      <h1 style="text-align: center; color: #2d3748; margin-bottom: 1.5rem;">Cow Say</h1>
-      <div style="max-width: 700px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); padding: 1.5rem; overflow-x: auto;">
+    <body style="margin: 0; padding: 2rem; background-color: #fde8e4; font-family: sans-serif; min-height: 100vh; box-sizing: border-box;">
+      <h1 style="text-align: center; color: #c2185b; margin-bottom: 1.5rem;">Cow Say</h1>
+      <div style="max-width: 700px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 16px rgba(194,24,91,0.15); padding: 1.5rem; overflow-x: auto;">
         <pre style="font-family: monospace; margin: 0; white-space: pre; overflow-x: auto;">${cowsay.say({
       text,
       e: "oO"
