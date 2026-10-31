@@ -25,6 +25,19 @@ const publicFolderPath = path.join(__dirname, p);
 app.use(favicon(path.join(publicFolderPath, '/favicon.ico')));
 app.use(exp.static(publicFolderPath));
 
+// Fixed list of answers for the second cow
+const cowAnswers = [
+  "Moo, so true!",
+  "I was just thinking that.",
+  "Deep. Very deep.",
+];
+
+// Function to get a random answer for the second cow
+function getRandomAnswer() {
+  const randomIndex = Math.floor(Math.random() * cowAnswers.length);
+  return cowAnswers[randomIndex];
+}
+
 // Hardcoded Deepak Chopra-style quotes for fallback
 const deepakChopraQuotes = [
   "Quantum physics discloses the architecture of the cosmos",
@@ -130,6 +143,10 @@ const setCowsaySentence = (text) => {
         <pre style="font-family: monospace; margin: 0; white-space: pre; overflow-x: auto;">${cowsay.say({
       text,
       e: "oO"
+    })}</pre>
+        <pre style="font-family: monospace; margin: 0; white-space: pre; overflow-x: auto;">${cowsay.say({
+      text: getRandomAnswer(),
+      e: "^^"
     })}</pre>
       </div>
     </body>
