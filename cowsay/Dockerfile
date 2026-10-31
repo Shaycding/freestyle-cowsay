@@ -1,9 +1,13 @@
 FROM alpine:latest
 
-COPY . ./home/app
+RUN apk add --no-cache nodejs npm && adduser -D -u 10001 app
 
-WORKDIR ./home/app/src
+COPY . /home/app
 
-RUN chmod +x entry-point.sh
+WORKDIR /home/app/src
+
+RUN npm install && chmod +x entry-point.sh && chown -R 10001:10001 /home/app
+
+USER 10001
 
 ENTRYPOINT  ["./entry-point.sh"]
