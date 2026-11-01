@@ -142,11 +142,12 @@ const setCowsaySentence = (text) => {
       <img src="/banana-tree.svg" alt="" aria-hidden="true" data-decoration="banana-tree" data-side="right" style="position: fixed; right: 0; bottom: 0; height: 60vh; max-width: 20vw; z-index: 0; pointer-events: none; transform: scaleX(-1);">
       <h1 style="text-align: center; color: #c2185b; margin-bottom: 1.5rem; position: relative; z-index: 1;">Cow Say</h1>
       <div style="max-width: 700px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 16px rgba(194,24,91,0.15); padding: 1.5rem; overflow-x: auto; position: relative; z-index: 1;">
-        <pre style="font-family: monospace; margin: 0; white-space: pre; overflow-x: auto;">${cowsay.say({
+        <pre id="first-cow" style="font-family: monospace; margin: 0; white-space: pre; overflow-x: auto;">${cowsay.say({
       text,
       e: "oO"
     })}
 <span style="color: green">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span></pre>
+        <button onclick="document.getElementById('first-cow').childNodes[0].nodeValue='Thank you for the food!';" style="margin: 0.75rem 0; padding: 0.5rem 1.25rem; background-color: #c2185b; color: #ffffff; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer;">Feed the cow</button>
         <pre style="font-family: monospace; margin: 0; white-space: pre; overflow-x: auto;">${cowsay.say({
       text: getRandomAnswer(),
       e: "^^"
