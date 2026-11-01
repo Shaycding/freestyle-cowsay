@@ -138,8 +138,10 @@ const setCowsaySentence = (text) => {
     </head>
 
     <body style="margin: 0; padding: 2rem; background-color: #fde8e4; font-family: sans-serif; min-height: 100vh; box-sizing: border-box;">
-      <h1 style="text-align: center; color: #c2185b; margin-bottom: 1.5rem;">Cow Say</h1>
-      <div style="max-width: 700px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 16px rgba(194,24,91,0.15); padding: 1.5rem; overflow-x: auto;">
+      <img src="/banana-tree.svg" alt="" aria-hidden="true" data-decoration="banana-tree" data-side="left" style="position: fixed; left: 0; bottom: 0; height: 60vh; max-width: 20vw; z-index: 0; pointer-events: none;">
+      <img src="/banana-tree.svg" alt="" aria-hidden="true" data-decoration="banana-tree" data-side="right" style="position: fixed; right: 0; bottom: 0; height: 60vh; max-width: 20vw; z-index: 0; pointer-events: none; transform: scaleX(-1);">
+      <h1 style="text-align: center; color: #c2185b; margin-bottom: 1.5rem; position: relative; z-index: 1;">Cow Say</h1>
+      <div style="max-width: 700px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 16px rgba(194,24,91,0.15); padding: 1.5rem; overflow-x: auto; position: relative; z-index: 1;">
         <pre style="font-family: monospace; margin: 0; white-space: pre; overflow-x: auto;">${cowsay.say({
       text,
       e: "oO"
