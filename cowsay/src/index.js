@@ -92,7 +92,7 @@ Deepak Chopra Quote (Fallback):
       // Website is up, parse the response as before
       try {
         var $ = cheerio.load(body);
-        const st = $('h2', '#quote').text().replace(/\"/g, '').replace(/\_/g, '');
+        var st = $('h2', '#quote').text().replace(/\"/g, '').replace(/\_/g, '');
         const w = `
 Deepak Chopra Quote:
 " ${st}"
@@ -112,6 +112,11 @@ Deepak Chopra Quote:
       }
     }
   });
+});
+
+app.post('/feed', function (req, res) {
+  const responseText = setCowsaySentence('Thank you for the food!');
+  res.send(responseText);
 });
 
 app.get('/:text', function (req, res) {
@@ -147,7 +152,9 @@ const setCowsaySentence = (text) => {
       e: "oO"
     })}
 <span style="color: green">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span></pre>
-        <button onclick="document.getElementById('first-cow').childNodes[0].nodeValue='Thank you for the food!';" style="margin: 0.75rem 0; padding: 0.5rem 1.25rem; background-color: #c2185b; color: #ffffff; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer;">Feed the cow</button>
+        <form action="/feed" method="post" style="margin: 0.75rem 0;">
+          <button type="submit" data-feed-text="Thank you for the food!" style="padding: 0.5rem 1.25rem; background-color: #c2185b; color: #ffffff; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer;">Feed the cow</button>
+        </form>
         <pre style="font-family: monospace; margin: 0; white-space: pre; overflow-x: auto;">${cowsay.say({
       text: getRandomAnswer(),
       e: "^^"
