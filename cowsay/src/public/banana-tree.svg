@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 300" width="120" height="300">
+  <!-- Trunk -->
+  <rect x="52" y="180" width="16" height="120" fill="#8B6914" rx="4"/>
+  <rect x="54" y="185" width="6" height="110" fill="#A07820" rx="2"/>
+
+  <!-- Main leaves -->
+  <!-- Left large leaf -->
+  <ellipse cx="30" cy="140" rx="40" ry="12" fill="#4CAF50" transform="rotate(-20 30 140)"/>
+  <line x1="60" y1="175" x2="10" y2="130" stroke="#388E3C" stroke-width="2"/>
+
+  <!-- Right large leaf -->
+  <ellipse cx="90" cy="145" rx="40" ry="12" fill="#4CAF50" transform="rotate(20 90 145)"/>
+  <line x1="60" y1="175" x2="110" y2="135" stroke="#388E3C" stroke-width="2"/>
+
+  <!-- Upper left leaf -->
+  <ellipse cx="20" cy="110" rx="38" ry="10" fill="#66BB6A" transform="rotate(-30 20 110)"/>
+  <line x1="60" y1="165" x2="5" y2="100" stroke="#388E3C" stroke-width="2"/>
+
+  <!-- Upper right leaf -->
+  <ellipse cx="100" cy="115" rx="38" ry="10" fill="#66BB6A" transform="rotate(30 100 115)"/>
+  <line x1="60" y1="165" x2="115" y2="105" stroke="#388E3C" stroke-width="2"/>
+
+  <!-- Top leaf -->
+  <ellipse cx="60" cy="80" rx="14" ry="45" fill="#4CAF50" transform="rotate(-5 60 80)"/>
+  <line x1="60" y1="160" x2="60" y2="80" stroke="#388E3C" stroke-width="2"/>
+
+  <!-- Banana bunch -->
+  <g transform="translate(55, 170)">
+    <!-- Bunch stem -->
+    <line x1="0" y1="0" x2="-15" y2="25" stroke="#5D4037" stroke-width="3"/>
+    <!-- Bananas -->
+    <ellipse cx="-10" cy="22" rx="12" ry="5" fill="#FFD600" transform="rotate(-30 -10 22)"/>
+    <ellipse cx="-18" cy="30" rx="12" ry="5" fill="#FFEE58" transform="rotate(-25 -18 30)"/>
+    <ellipse cx="-12" cy="38" rx="12" ry="5" fill="#FFD600" transform="rotate(-20 -12 38)"/>
+    <!-- Banana tips -->
+    <circle cx="-20" cy="20" r="2" fill="#8B6914"/>
+    <circle cx="-27" cy="28" r="2" fill="#8B6914"/>
+    <circle cx="-22" cy="36" r="2" fill="#8B6914"/>
+  </g>
+
+  <!-- Ground roots -->
+  <ellipse cx="60" cy="298" rx="30" ry="4" fill="#6D4C41" opacity="0.5"/>
+</svg>
