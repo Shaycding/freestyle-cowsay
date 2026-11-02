@@ -142,16 +142,18 @@ const setCowsaySentence = (text) => {
       <img src="/banana-tree.svg" alt="" aria-hidden="true" data-decoration="banana-tree" data-side="right" style="position: fixed; right: 0; bottom: 0; height: 60vh; max-width: 20vw; z-index: 0; pointer-events: none; transform: scaleX(-1);">
       <h1 style="text-align: center; color: #c2185b; margin-bottom: 1.5rem; position: relative; z-index: 1;">Cow Say</h1>
       <div style="max-width: 700px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 16px rgba(194,24,91,0.15); padding: 1.5rem; overflow-x: auto; position: relative; z-index: 1;">
-        <pre style="font-family: monospace; margin: 0; white-space: pre; overflow-x: auto;">${cowsay.say({
+        <div id="cow-controls"><button type="button" id="move-left" aria-label="Move left">Move left</button> <button type="button" id="move-right" aria-label="Move right">Move right</button></div>
+        <pre style="font-family: monospace; margin: 0; white-space: pre; overflow-x: auto;"><span id="first-cow" data-cow="first" data-offset="0" style="display: inline-block; position: relative; left: 0px;">${cowsay.say({
       text,
       e: "oO"
-    })}
+    })}</span>
 <span style="color: green">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span></pre>
-        <pre style="font-family: monospace; margin: 0; white-space: pre; overflow-x: auto;">${cowsay.say({
+        <pre data-cow="second" style="font-family: monospace; margin: 0; white-space: pre; overflow-x: auto;">${cowsay.say({
       text: getRandomAnswer(),
       e: "^^"
     })}</pre>
       </div>
+      <script src="/move-cow.js" defer></script>
     </body>
   </html>
 `;
