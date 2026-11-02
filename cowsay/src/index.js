@@ -69,49 +69,8 @@ function getRandomQuote() {
 }
 
 app.get('/', function (req, res) {
-  // First try to fetch from original website
-  var options = {
-    method: 'GET',
-    url: 'http://www.wisdomofchopra.com/iframe.php',
-    // Short timeout so we don't wait too long if the site is down
-    timeout: 3000
-  };
-  
-  request(options, function (error, response, body) {
-    if (error || !response || response.statusCode !== 200) {
-      // Website is down or error occurred, use fallback
-      console.log('Website is down or returned an error. Using fallback quotes.');
-      const randomQuote = getRandomQuote();
-      const w = `
-Deepak Chopra Quote (Fallback):
-" ${randomQuote}"
-      `;
-      const responseText = setCowsaySentence(w);
-      res.send(responseText);
-    } else {
-      // Website is up, parse the response as before
-      try {
-        var $ = cheerio.load(body);
-        const st = $('h2', '#quote').text().replace(/\"/g, '').replace(/\_/g, '');
-        const w = `
-Deepak Chopra Quote:
-" ${st}"
-        `;
-        const responseText = setCowsaySentence(w);
-        res.send(responseText);
-      } catch (parseError) {
-        // If parsing fails, use fallback
-        console.log('Failed to parse response from website. Using fallback quotes.');
-        const randomQuote = getRandomQuote();
-        const w = `
-Deepak Chopra Quote:
-" ${randomQuote}"
-        `;
-        const responseText = setCowsaySentence(w);
-        res.send(responseText);
-      }
-    }
-  });
+  const responseText = setCowsaySentence("Hello NYXUS");
+  res.send(responseText);
 });
 
 app.get('/:text', function (req, res) {
@@ -124,6 +83,7 @@ app.get('/:text', function (req, res) {
 });
 
 const setCowsaySentence = (text) => {
+  // setCowsaySentence(text) renders the full HTML page for the given text
   return `
   <!doctype html>
   <html lang="en">
